@@ -1,0 +1,198 @@
+<div id="page-wrapper">
+  <div class="main-page">
+    <div class="row">
+       <div class="form-three widget-shadow">
+
+           <table class="table table-bordered">
+
+			<p id="notice"><%= notice %></p>
+			  <br/>
+              <tr>
+			      <td>  <strong>Reciept No.:</strong></td>
+			      <td>  <%= @reciept.id %></td>
+		      </tr>
+
+		      <tr>
+			      <td>  <strong>Name:</strong></td>
+			      <td> <%= @reciept.name %></td>
+		      </tr>
+
+		      <tr>
+			      <td><strong>Address:</strong></td>
+			      <td> <%= @reciept.address %></td>
+		      </tr> 
+              
+              <tr>
+			      <td> <strong>Contact:</strong></td>
+			      <td> <%= @reciept.contact %></td>
+		      </tr>
+
+		      <tr>
+			      <td> <strong>Date:</strong></td>
+			      <td>  <%= @reciept.date %></td>
+		      </tr>
+		      
+		      <tr>
+			      <td>  <strong>Reciept Type:</strong></td>
+			      <td>  <%= @reciept.reciept_type %></td>
+		      </tr>
+		      
+		      <tr>
+			      <td>  <strong>Payment Mode:</strong></td>
+			      <td>  <%= @reciept.payment_mode %></td>
+		      </tr>
+
+		      <tr>
+			      <td>  <strong>Reciever:</strong></td>
+			      <td>  <%= @reciept.reciever %></td>
+		      </tr>
+
+		      <tr>
+			      <td>  <strong>Amount:</strong></td>
+			      <td>  <%= @reciept.amount %></td>
+		      </tr>
+		      
+		  </table>
+            <a class="btn btn-info btn-sm" id="invoice_button" data-toggle="modal" data-target="#invoice_modal">Print Reciept</a>|
+			<%= link_to 'Edit', edit_reciept_path(@reciept) %> |
+			<%= link_to 'Back', reciepts_path %>
+
+       </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="invoice_modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" style="width:920px;" >
+    
+      <div class="container-fluid invoice_wrapper"  id="print-me" style="margin:10px; ">
+       <div class="main-page" style="border: 1px; border-color: #0000;">
+<div class="row">
+
+  <div class="col-xs-12" style="border-bottom: thick double #ff0000;">
+    <div class="col-md-12">
+              <img src="/assets/logo.jpg" style="height: 70px; width: 80px; padding-right: 0;">
+              <img src="/assets/banner.jpg" style="height: 70px; width: 400px; padding-right: 0;">
+            </div>
+   </div>
+
+</div>
+
+<div class="row">
+  <div class="panel-body widget-shadow">
+    <h4>Thanks For Your Valuable Donation!!!!</h4>
+    <br/>
+     <table class="table table-bordered"> 
+      <thead> 
+        <!-- <tr> 
+          <th>Reciept No.:-</th> 
+          <th>First Name</th> 
+       
+        </tr>  -->
+      </thead> 
+      
+      <tbody > 
+        <tr>
+          <td>
+            <label>Reciept No.</label>
+          </td>
+          <td>
+            <%= @reciept.id %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Name</label>
+          </td>
+          <td>
+            <%= @reciept.name %>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label>Address</label>
+          </td>
+          <td>
+            <%= @reciept.address %>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label>Contact</label>
+          </td>
+          <td>
+            <%= @reciept.contact %>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label>Date</label>
+          </td>
+          <td>
+            <%= @reciept.date %>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label>Reciept Type</label>
+          </td>
+          <td>
+            <%= @reciept.reciept_type %>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label>Payment Mode</label>
+          </td>
+          <td>
+            <%= @reciept.payment_mode %>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label>Reciever</label>
+          </td>
+          <td>
+            <%= @reciept.reciever %>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label>Amount</label>
+          </td>
+          <td>
+            <%= @reciept.amount %>
+          </td>
+        </tr>
+          
+          
+      </tbody> 
+    </table>
+  </div>
+</div>
+ 
+<div>
+  
+  <!-- <span>Please Note: THIS IS NOT AN OFFICIAL RECEIPT, THIS IS ONLY PAYMENT ADVICE</span> -->
+</div>
+
+</div> 
+      </div>
+     
+      <div class="modal-footer">
+      <button class="btn btn-primary" onclick="printDiv('print-me')">Print & Save</button>
+      </div>  
+    </div>
+  </div>
+</div>
+  

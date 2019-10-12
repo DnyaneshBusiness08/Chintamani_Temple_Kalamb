@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  host: 127.0.0.1
+  username: postgres
+  password: Dnyanesh@2008
+
+development:
+  <<: *default
+  database: Chintamani_Temple_ERP_development
+
+
+test:
+  <<: *default
+  database: Chintamani_Temple_ERP_test
+
+production:
+  <<: *default
+  database: Chintamani_Temple_ERP_production
+  username: Chintamani_Temple_ERP
+  password: <%= ENV['CHINTAMANI_TEMPLE_ERP_DATABASE_PASSWORD'] %>

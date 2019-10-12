@@ -1,0 +1,25 @@
+   <div class="main-page login-page ">
+        <h2 class="title1">Login</h2>
+        <div class="widget-shadow">
+          <div class="login-body">
+           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              
+              <%= f.email_field :email, placeholder:"Enter Your Email", required: "", :class=> "user" %>
+              
+              <%= f.password_field :password, placeholder:"Password", required: "", :class=> "lock" %>
+            
+              <%= f.submit "Log in" %>
+             
+              <div class="registration">
+               
+                
+                
+              </div>
+              
+            <% end %>
+          </div>
+        </div>
+        
+      </div>
+
+

@@ -1,0 +1,97 @@
+<div id="page-wrapper">
+  <div class="main-page">
+    <div class="forms">
+      <div class="col-xs-12">
+
+        <h5> <%= link_to 'Click Show All Reciepts', reciepts_path, class: 'btn btn-info btn-sm' %> </h5>
+      <%= simple_form_for(@reciept) do |f| %>
+        <div id="invoice-wrap">
+          <div class="row">
+          </div>
+          <div class="row invoice-info">
+            <form class="form-horizontal">
+              <div class="col-xs-12 invoice-col">
+                <label>Name</label>
+                <!-- <input class="form-control" id= "1"  placeholder="address line 1" /> -->
+                <%= f.text_field :name, class: "form-control", palceholder: "Name", required:"" %>
+                <br/>
+                <label>Address</label>
+               <!--  <input class="form-control" id= "2"  placeholder="address line 1" /> -->
+                <%= f.text_area :address, class: "form-control", palceholder: "Address", required:"" %>
+                <br/>
+                <label>Contact</label>
+               <!--  <input class="form-control" id= "3"  placeholder="address line 1" /> -->
+                <%= f.text_field :contact, class: "form-control", palceholder: "Contact", required:"" %>
+                <br/>
+                <label>Date</label>
+                <!-- <input class="form-control" id= "4"  placeholder="address line 1" /> -->
+                <%= f.date_select :date, class: "form-control", palceholder: "Date" %>
+                <br/>
+                <br/>
+
+                
+                 <label>Reciept Type</label>
+                 <%#= f.select_field(:reciept_type, raw('<option value="1">Donation</option><option value="2">Abhishek</option><option value="3">Bhaktinivas</option>
+                   <option value="4">Temple Construction</option>')) %>
+                   <%= f.select :reciept_type, options_for_select([['Donation'],['Abhishek'],['Bhaktinivas']]) %>
+                <br/>
+                <br/>
+                  
+
+                <label>Payment Mode</label>
+                <%#= select_tag(:payment_mode, raw('<option value="1">Cash</option><option value="2">Swipe</option><option value="3">Chaque</option>')) %>
+                <%= f.select :payment_mode, options_for_select([['Cash'],['Swipe'],['Chaque']]) %>
+ 
+                <br/>
+                <br/>
+
+
+                <label>Reciever</label>
+                 
+                <%= f.text_field :reciever, class: "form-control", palceholder: "Reciever Name", required:"" %>
+
+                <br/>
+
+                <label>Amount</label>
+                <%= f.text_field :amount, class: "form-control", palceholder: "Amount", required:"" %>
+
+                <br/>
+
+              </div>
+            </form>
+            <br/>
+            <div class="row">
+              <div class="col-xs-12 pull-left">
+                <!-- <a class="btn btn-info btn-sm" id="invoice_button" data-toggle="modal" data-target="#invoice_modal">Show Invoice</a> -->
+                <%= f.button :submit, 'Submit Payment', class: 'btn btn-info btn-sm', id: "submit_invoice", data: {toggle: "modal", target: "#invoice_modal"}, :remote => true %>    
+              </div>
+            </div>  
+            <div id="terms">
+              <h5>Terms</h5>
+              <textarea id="10">Write your own terms and condition statements as per requirement</textarea>
+            </div>
+        </div> 
+      <% end %> 
+      </div>
+    </div>
+  </div>
+</div>
+ 
+ 
+
+<!--  
+<div class="modal fade" id="invoice_modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" style="width:920px;" >
+    
+      <div class="container-fluid invoice_wrapper"  id="print-me" style="margin:10px; ">
+        <%#= render 'reciept' %>
+      </div>
+     
+      <div class="modal-footer">
+      <button class="btn btn-primary" onclick="printDiv('print-me')">Print & Save</button>
+      </div>  
+    </div>
+  </div>
+</div>
+   -->

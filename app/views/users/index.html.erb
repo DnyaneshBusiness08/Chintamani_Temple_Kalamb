@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<div id="page-wrapper">
+  <div class="main-page">
+    <div class="tables">
+      <div class="bs-example widget-shadow" data-example-id="bordered-table"> 
+        <%= link_to 'Add New User', new_users_admin_path, :class=> "btn btn-info btn-flat btn-pri btn-sm" %>
+        <br/>
+        <br/>
+        <h4>All Users</h4>
+        <table class="table table-bordered"> 
+          <thead> 
+            <tr> 
+              <th>Email</th> 
+              
+              <th>Action</th> 
+            </tr> 
+          </thead> 
+          <tbody> 
+            <% @users.each do |user| %>
+              <tr>
+                <td><%= user.email %></td>
+               
+                <td>  
+                <%= link_to 'Destroy', users_admin_path(user), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-success btn-sm' %>       
+                  
+                </td>  
+              </tr>
+            <% end %> 
+          </tbody> 
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+ 

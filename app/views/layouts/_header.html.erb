@@ -1,0 +1,176 @@
+<% if user_signed_in? %>
+<div class="main-content">
+
+	<div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left"    id="cbp-spmenu-s1">
+	 <aside class="sidebar-left">
+      <nav class="navbar navbar-inverse">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <h1><a class="navbar-brand" href="#">
+            	<!-- <span class="fas fa-om" style="font-size:50px;color:orange"></span> -->&nbsp; &nbsp; &nbsp; &nbsp;<span class="fas fa-yin-yang" style="font-size:50px;color:orange"></span> <br/><br/>Chintamani<span class="dashboard_text">Temple ERP</span></a></h1>
+          </div>
+          <br/>
+          <br/>
+          <br/>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="sidebar-menu">
+              <!-- <li class="header">MAIN NAVIGATION</li> -->
+              <li class="treeview">
+                <%= link_to root_path do %>
+                  <i class="fas fa-tachometer-alt"></i> Dashboard
+                <% end %>
+                   
+              </li>
+
+              <li class="treeview">
+                <%= link_to new_reciept_path do %>
+                  <i class="fas fa-print"></i> Reciept
+                <% end %>
+                   
+              </li>
+			 
+      
+            <% if current_user.admin? %> 
+
+              <li class="treeview">
+                <a href="#">
+                <i class="fas fa-wallet"></i> <span>Salary</span>
+                </a>
+              </li>
+
+
+              <li class="treeview">
+                <a href="#">
+                <i class="fas fa-rupee"></i> <span>Expenditure</span>
+                </a>
+              </li>
+
+
+             <!--  <li class="treeview">
+                <a href="#">
+                <i class="fas fa-file"></i> <span>Reports</span>
+                </a>
+              </li> -->
+            <li class="treeview">
+                <a href="#">
+                <i class="fas fa-file"></i>
+                <span>Reports</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  
+                  <li>
+                    <%= link_to reports_path do %>
+                      <i class="fa fa-angle-right"></i>Reciepts Reports
+                    <% end %>
+                  </li>
+                 <!--  <li>
+                    <%#= link_to users_admin_index_path do %>
+                      <i class="fa fa-angle-right"></i>Salary Reports
+                     <#% end %> 
+                  </li> -->
+<!-- 
+                  <li>
+                    <%#= link_to users_admin_index_path do %>
+                      <i class="fa fa-angle-right"></i>Expenditure Reports
+                     <#% end %>
+                  </li> -->
+               
+                 </ul>
+              </li>
+           
+              <li class="treeview">
+                <a href="#">
+                <i class="fas fa-user-cog"></i>
+                <span>Users</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  
+                  <li>
+                    <%= link_to new_users_admin_path do %>
+                      <i class="fa fa-angle-right"></i>Add New User
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to users_admin_index_path do %>
+                      <i class="fa fa-angle-right"></i>Show All Users
+                    <% end %>
+                  </li>
+               
+                 </ul>
+              </li>
+            <% end %>
+            </ul>
+          </div>
+        
+      </nav>
+     </aside>
+	</div>
+		 
+	<div class="sticky-header header-section ">
+		<div class="header-left">
+				
+				<button id="showLeftPush"><i class="fa fa-bars"></i></button>
+			
+				 
+				<div class="clearfix"> </div>
+		</div>
+	<div class="header-right">
+				
+	<!-- 	<div class="search-box">
+					<form class="input">
+						<input class="sb-search-input input__field--madoka" placeholder="Search..." type="search" id="input-31" />
+						<label class="input__label" for="input-31">
+							<svg class="graphic" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
+								<path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
+							</svg>
+						</label>
+					</form>
+	    </div>  -->
+				
+	    <div class="profile_details">		
+					<ul>
+						<li class="dropdown profile_details_drop">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<div class="profile_img">	
+									<span class="prfil-img"><img src="/assets/avatar.png" alt=""> </span> 
+									<div class="user-name">
+                     <% if current_user.admin? %> 
+										<p>Admin</p>
+                    <% else %>
+                    <p>User</p>
+                    <% end %>
+										<span>Administrator</span>
+									</div>
+									<i class="fa fa-angle-down lnr"></i>
+									<i class="fa fa-angle-up lnr"></i>
+									<div class="clearfix"></div>	
+								</div>	
+							</a>
+							<ul class="dropdown-menu drp-mnu">
+								
+
+								<li>
+                  <%= link_to destroy_user_session_path, method: :delete do %>
+                   <i class="fa fa-user"></i>Logout
+                  <% end %>
+                </li>
+
+
+							</ul>
+						</li>
+					</ul>
+	    </div>
+	      <div class="clearfix"> </div>				
+	</div>
+	    <div class="clearfix"> </div>	
+</div>
+		 
+<% end %>
+

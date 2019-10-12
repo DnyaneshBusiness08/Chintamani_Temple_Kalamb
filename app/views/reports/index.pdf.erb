@@ -1,0 +1,59 @@
+<h2 class="title1">Receipts Reports</h2>
+<div class="tables">
+  <div class="bs-example widget-shadow" data-example-id="bordered-table">
+    <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Reciept_No.</th>
+              <th>Name</th> 
+              
+              <th>Contact No.</th> 
+              <th>Date</th> 
+              <th>Reciept Type</th> 
+              <th>Payment Mode</th>
+              <th>Receiver</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+    
+          <tbody>
+            <% @reciepts.each do |reciept| %>
+           
+              <tr>
+                <td><%= reciept.id %></td>
+                <td><%= reciept.name %></td>
+                
+                <td><%= reciept.contact %></td>
+                <td><%= reciept.date %></td>
+                <td><%= reciept.reciept_type %></td>
+                <td><%= reciept.payment_mode %></td>
+                <td><%= reciept.reciever %></td>
+                <td><%= reciept.amount %></td>
+                </tr>
+            <% end %>
+          </tbody>
+    </table>
+  </div>
+</div>
+
+
+<style type="text/css">
+
+
+ td,  th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+ tr:nth-child(even){background-color: #f2f2f2;}
+
+ tr:hover {background-color: #ddd;}
+
+ th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #f2b33f;
+  color: white;
+}
+</style>
