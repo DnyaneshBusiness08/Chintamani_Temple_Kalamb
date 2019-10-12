@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_22_112450) do
+ActiveRecord::Schema.define(version: 2019_10_12_172012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_06_22_112450) do
   create_table "reciepts", force: :cascade do |t|
     t.string "name"
     t.text "address"
-    t.decimal "contact"
+    t.string "contact"
     t.date "date"
     t.string "reciept_type"
     t.string "payment_mode"
