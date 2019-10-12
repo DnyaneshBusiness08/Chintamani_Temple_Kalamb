@@ -28,12 +28,15 @@ gem 'will_paginate-bootstrap'
 
 gem 'msg91'
 
-gem "therubyracer"
+gem 'therubyracer'
+
+gem 'rails_12factor'
 
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-datepicker-rails'
 gem 'bootsnap', '>= 1.1.0', require: true
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -51,6 +54,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
 end
- 
+
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
