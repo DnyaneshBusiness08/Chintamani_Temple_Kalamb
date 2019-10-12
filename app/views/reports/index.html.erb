@@ -8,9 +8,6 @@
 
        <div class="table-responsive">
 
-<!--         <div class="col-md-1">
-          <h4>RECIEPTS</h4>
-        </div> -->
            
            <%= search_form_for @search, url: search_reports_path, html: {class: "form-inline col-md-12", method: :post} do|f| %>
              <!-- <div class="input-daterange"> -->
@@ -32,23 +29,7 @@
               
             <% end %>
         
-       <!--  <%#= search_form_for @search, url: search_reports_path, html: {class: "form-inline col-md-8 col-md-offset-1", method: :post} do|f| %>
-             <div class="input-daterange input-group" id="datepicker">
-                <div class="col-md-4">
-                  <%#= f.date_field :date_gteq, class: "form-control", placeholder: "From" %>
-                </div> 
-                
-                <div class="col-md-4 col-md-offset-1">
-                  <%#= f.date_field :date_lteq, class: "form-control", placeholder: "To" %>
-                </div>
-                </div>
-                <div class="col-md-2 col-md-offset-1 form-actions">
-                  <%#= f.submit "Search", class: "btn btn-success" %>
-                </div>
-              
-            <%# end %> -->
-
-
+  
 
         <table class="table table-striped table-bordered" style="margin-top: 60px;">
           <thead style="background-color: #f2b33f;">
@@ -85,8 +66,7 @@
 
          </table>
         </div>
-        <%#= link_to "PDF File", "/reports/search.pdf" %>
-        <%#= link_to "Download PDF File",  reports_path(@search, format: :pdf) %>
+        
       
        <%= link_to "Download PDF File", reports_path(@reciepts, format: 'pdf',search: "#{params[:q]}")%>
        </div>

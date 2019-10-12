@@ -18,8 +18,7 @@ gem 'authlogic'
 gem 'simple_form'
 
 gem 'ransack'
-# gem 'prawn'
-# gem 'prawn-table'
+ 
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 
